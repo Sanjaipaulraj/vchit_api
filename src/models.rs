@@ -18,3 +18,12 @@ pub struct CollectionModel{
     pub cheque_no: Option<String>,
     pub bank: Option<String>,
 }
+
+#[derive(Debug,Serialize,Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct SummaryBreakupModel{
+    pub total_amount: f32,
+    pub cash_amount: f32,
+    pub upi_amount: f32,
+    pub cheque_amount: f32,
+}

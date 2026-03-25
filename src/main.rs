@@ -5,8 +5,9 @@ use axum::{
 mod handlers;
 mod models;
 
-use handlers::{collections::get_collections, members::get_members,groups::get_groups};
+use handlers::{collections::get_collections, members::get_members,groups::get_groups,summary_breakup::summary_breakup};
 use tower_http::cors::{CorsLayer,Any};
+
 
 #[tokio::main]
 async fn main() {
@@ -21,6 +22,7 @@ async fn main() {
         .route("/collectionlist", get(get_collections))
         .route("/members", get(get_members))
         .route("/groups", get(get_groups))
+        .route("/summary", get(summary_breakup))
         .layer(cors);
 
     let ip_port = format!("0.0.0.0:5000");
