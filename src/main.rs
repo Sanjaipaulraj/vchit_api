@@ -6,16 +6,22 @@ mod handlers;
 mod models;
 
 use handlers::{collections::get_collections, members::get_members,groups::get_groups};
+use tower_http::cors::{CorsLayer,Any};
 
 #[tokio::main]
 async fn main() {
-    println!("Hello, world!");
+
+    let cors = CorsLayer::new()
+        .allow_origin(Any)
+        .allow_methods(Any)
+        .allow_headers(Any);
 
     let app = Router::new()
         .route("/ping", post(ping))
         .route("/collectionlist", get(get_collections))
         .route("/members", get(get_members))
-        .route("/groups", get(get_groups));
+        .route("/groups", get(get_groups))
+        .layer(cors);
 
     let ip_port = format!("0.0.0.0:5000");
     println!("Server start at {}", ip_port);

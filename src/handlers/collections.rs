@@ -3,10 +3,11 @@ use axum::Json;
 use crate::models::{CollectionModel, Mode};
 
 pub async fn get_collections() -> Json<Vec<CollectionModel>> {
+    println!("Collection method called");
     let collection_list: Vec<CollectionModel> = vec![
         CollectionModel {
             grp_name: "1L A1".to_string(),
-            customer_name: "Raja".to_string(),
+            member_name: "Raja".to_string(),
             amount: 5000.00,
             mode: Mode::CASH,
             cheque_no: None,
@@ -14,7 +15,7 @@ pub async fn get_collections() -> Json<Vec<CollectionModel>> {
         },
         CollectionModel {
             grp_name: "1L A2".to_string().to_string(),
-            customer_name: "Sekar".to_string(),
+            member_name: "Sekar".to_string(),
             amount: 4000.00,
             mode: Mode::UPI,
             cheque_no: None,
@@ -22,7 +23,7 @@ pub async fn get_collections() -> Json<Vec<CollectionModel>> {
         },
         CollectionModel {
             grp_name: "1L A2".to_string().to_string(),
-            customer_name: "Velu".to_string().to_string(),
+            member_name: "Velu".to_string().to_string(),
             amount: 7000.00,
             mode: Mode::CHEQUE,
             cheque_no: Some("SBIN56789".to_string()),
@@ -30,7 +31,7 @@ pub async fn get_collections() -> Json<Vec<CollectionModel>> {
         },
         CollectionModel {
             grp_name: "5L A3".to_string(),
-            customer_name: "Mani".to_string(),
+            member_name: "Mani".to_string(),
             amount: 3500.00,
             mode: Mode::UPI,
             cheque_no: None,
@@ -38,7 +39,7 @@ pub async fn get_collections() -> Json<Vec<CollectionModel>> {
         },
         CollectionModel {
             grp_name: "1L A1".to_string(),
-            customer_name: "Raja".to_string(),
+            member_name: "Raja".to_string(),
             amount: 5000.00,
             mode: Mode::CASH,
             cheque_no: None,
@@ -46,7 +47,7 @@ pub async fn get_collections() -> Json<Vec<CollectionModel>> {
         },
         CollectionModel {
             grp_name: "1L A2".to_string(),
-            customer_name: "Sekar".to_string(),
+            member_name: "Sekar".to_string(),
             amount: 4000.00,
             mode: Mode::UPI,
             cheque_no: None,
@@ -54,7 +55,7 @@ pub async fn get_collections() -> Json<Vec<CollectionModel>> {
         },
         CollectionModel {
             grp_name: "1L A2".to_string(),
-            customer_name: "Velu".to_string(),
+            member_name: "Velu".to_string(),
             amount: 7000.00,
             mode: Mode::CHEQUE,
             cheque_no: Some("SBIN56789".to_string()),
@@ -62,7 +63,7 @@ pub async fn get_collections() -> Json<Vec<CollectionModel>> {
         },
         CollectionModel {
             grp_name: "5L A3".to_string(),
-            customer_name: "Mani".to_string(),
+            member_name: "Mani".to_string(),
             amount: 3500.00,
             mode: Mode::UPI,
             cheque_no: None,
@@ -70,7 +71,7 @@ pub async fn get_collections() -> Json<Vec<CollectionModel>> {
         },
         CollectionModel {
             grp_name: "1L A1".to_string(),
-            customer_name: "Raja".to_string(),
+            member_name: "Raja".to_string(),
             amount: 5000.00,
             mode: Mode::CASH,
             cheque_no: None,
@@ -78,7 +79,7 @@ pub async fn get_collections() -> Json<Vec<CollectionModel>> {
         },
         CollectionModel {
             grp_name: "1L A2".to_string(),
-            customer_name: "Sekar".to_string(),
+            member_name: "Sekar".to_string(),
             amount: 4000.00,
             mode: Mode::UPI,
             cheque_no: None,
@@ -86,7 +87,7 @@ pub async fn get_collections() -> Json<Vec<CollectionModel>> {
         },
         CollectionModel {
             grp_name: "1L A2".to_string(),
-            customer_name: "Velu".to_string(),
+            member_name: "Velu".to_string(),
             amount: 7000.00,
             mode: Mode::CHEQUE,
             cheque_no: Some("SBIN56789".to_string()),
@@ -94,7 +95,7 @@ pub async fn get_collections() -> Json<Vec<CollectionModel>> {
         },
         CollectionModel {
             grp_name: "5L A3".to_string(),
-            customer_name: "Mani".to_string(),
+            member_name: "Mani".to_string(),
             amount: 3500.00,
             mode: Mode::UPI,
             cheque_no: None,
@@ -102,7 +103,7 @@ pub async fn get_collections() -> Json<Vec<CollectionModel>> {
         },
         CollectionModel {
             grp_name: "5L A3".to_string(),
-            customer_name: "Mani".to_string(),
+            member_name: "Mani".to_string(),
             amount: 3500.00,
             mode: Mode::UPI,
             cheque_no: None,
@@ -110,7 +111,7 @@ pub async fn get_collections() -> Json<Vec<CollectionModel>> {
         },
         CollectionModel {
             grp_name: "1L A1".to_string(),
-            customer_name: "Raja".to_string(),
+            member_name: "Raja".to_string(),
             amount: 5000.00,
             mode: Mode::CASH,
             cheque_no: None,
@@ -118,7 +119,7 @@ pub async fn get_collections() -> Json<Vec<CollectionModel>> {
         },
         CollectionModel {
             grp_name: "1L A2".to_string(),
-            customer_name: "Sekar".to_string(),
+            member_name: "Sekar".to_string(),
             amount: 4000.00,
             mode: Mode::UPI,
             cheque_no: None,
@@ -126,7 +127,7 @@ pub async fn get_collections() -> Json<Vec<CollectionModel>> {
         },
         CollectionModel {
             grp_name: "1L A2".to_string(),
-            customer_name: "Velu".to_string(),
+            member_name: "Velu".to_string(),
             amount: 7000.00,
             mode: Mode::CHEQUE,
             cheque_no: Some("SBIN56789".to_string()),
@@ -134,7 +135,7 @@ pub async fn get_collections() -> Json<Vec<CollectionModel>> {
         },
         CollectionModel {
             grp_name: "5L A3".to_string(),
-            customer_name: "Mani".to_string(),
+            member_name: "Mani".to_string(),
             amount: 3500.00,
             mode: Mode::UPI,
             cheque_no: None,
@@ -142,7 +143,7 @@ pub async fn get_collections() -> Json<Vec<CollectionModel>> {
         },
         CollectionModel {
             grp_name: "5L A3".to_string(),
-            customer_name: "Mani".to_string(),
+            member_name: "Mani".to_string(),
             amount: 3500.00,
             mode: Mode::UPI,
             cheque_no: None,
@@ -150,7 +151,7 @@ pub async fn get_collections() -> Json<Vec<CollectionModel>> {
         },
         CollectionModel {
             grp_name: "1L A1".to_string(),
-            customer_name: "Raja".to_string(),
+            member_name: "Raja".to_string(),
             amount: 5000.00,
             mode: Mode::CASH,
             cheque_no: None,
@@ -158,7 +159,7 @@ pub async fn get_collections() -> Json<Vec<CollectionModel>> {
         },
         CollectionModel {
             grp_name: "1L A2".to_string(),
-            customer_name: "Sekar".to_string(),
+            member_name: "Sekar".to_string(),
             amount: 4000.00,
             mode: Mode::UPI,
             cheque_no: None,
@@ -166,7 +167,7 @@ pub async fn get_collections() -> Json<Vec<CollectionModel>> {
         },
         CollectionModel {
             grp_name: "1L A2".to_string(),
-            customer_name: "Velu".to_string(),
+            member_name: "Velu".to_string(),
             amount: 7000.00,
             mode: Mode::CHEQUE,
             cheque_no: Some("SBIN56789".to_string()),
@@ -174,7 +175,7 @@ pub async fn get_collections() -> Json<Vec<CollectionModel>> {
         },
         CollectionModel {
             grp_name: "5L A3".to_string(),
-            customer_name: "Mani".to_string(),
+            member_name: "Mani".to_string(),
             amount: 3500.00,
             mode: Mode::UPI,
             cheque_no: None,
